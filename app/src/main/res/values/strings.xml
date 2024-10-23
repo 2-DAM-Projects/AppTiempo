@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AppTiempo</string>
+    <string name="botonWV1">Ir a pronóstico por horas</string>
+    <string name="botonWV2">Ir a pronóstico por días</string>
+    <string name="volver">Volver</string>
+    <string name="Tiempo">TIEMPO</string>
+    <string name="Tema">Tema Oscuro</string>
+    <string name="Temperatura">Mostrar temperatura en Fahrenheit</string>
+    <string name="Guardar">Guardar</string>
 </resources>

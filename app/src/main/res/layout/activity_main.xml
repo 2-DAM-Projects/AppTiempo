@@ -9,6 +9,10 @@
     tools:context=".MainActivity">
 
 
+    <!-- Resumen del clima -->
+
+    <!-- Detalles adicionales -->
+
     <TextView
         android:id="@+id/tvCiudad"
         android:layout_width="wrap_content"
@@ -19,41 +23,38 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/tvFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:text="Miércoles, 17 Octubre"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCiudad" />
 
+
+    <!-- Pronóstico por horas (Scrollable) -->
+
     <ImageView
         android:id="@+id/imgvIcono"
-        android:layout_width="55dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="93dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTemperatura" />
-
-    <!-- Resumen del clima -->
-
-    <!-- Detalles adicionales -->
 
     <TextView
         android:id="@+id/tvTemperatura"
         android:layout_width="147dp"
         android:layout_height="74dp"
-        android:layout_marginStart="128dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="4dp"
         android:text="22°C"
         android:textColor="@android:color/white"
@@ -64,50 +65,102 @@
 
     <TextView
         android:id="@+id/tvResumenTiempo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_width="396dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
         android:text="Soleado"
+        android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTemperatura" />
+        app:layout_constraintTop_toBottomOf="@+id/imgvIcono" />
 
     <TextView
         android:id="@+id/tvDetalleTiempo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="391dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Humedad: 60% | Viento: 12 km/h"
+        android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvResumenTiempo" />
 
-
-    <!-- Pronóstico por horas (Scrollable) -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTiempoHora"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
+    <WebView
+        android:id="@+id/wv1"
+        android:layout_width="404dp"
+        android:layout_height="188dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDetalleTiempo" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDetalleTiempo" />
 
-    <!-- Icono de clima y temperatura -->
+    <WebView
+        android:id="@+id/wv2"
+        android:layout_width="405dp"
+        android:layout_height="195dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnWV1" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTiempoSemana"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnWV1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="detalleHora"
+        android:text="@string/botonWV1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wv1" />
+
+    <Button
+        android:id="@+id/btnWV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="detalleDia"
+        android:text="@string/botonWV2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wv2" />
+
+    <ImageView
+        android:id="@+id/imgvConf"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:onClick="irAjustes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_configuracion" />
+
+    <ImageView
+        android:id="@+id/imgvUser"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:onClick="irUsuario"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvTiempoHora" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_user" />
 
-
+    <ImageView
+        android:id="@+id/imgvMapa"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="irMapa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wv2"
+        app:srcCompat="@drawable/ic_mapa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
