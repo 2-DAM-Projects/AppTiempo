@@ -9,8 +9,6 @@
     tools:context=".MainActivity">
 
 
-    <!-- Resumen del clima -->
-
     <!-- Detalles adicionales -->
 
     <TextView

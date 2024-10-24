@@ -25,10 +25,12 @@ public class DetalleDiaActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Declaraciones de las variables
         wv1 = findViewById(R.id.wv1);
         wv1.loadUrl(getIntent().getStringExtra("url2"));
     }
 
+    //Metodo volver a Main.
     public void volver(View view) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);

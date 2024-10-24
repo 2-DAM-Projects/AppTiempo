@@ -25,11 +25,13 @@ public class DetalleHoraActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Declaracion de variables.
         wv1 = findViewById(R.id.wv1);
         wv1.loadUrl(getIntent().getStringExtra("url1"));
 
     }
 
+    // Metodo para volver
     public void volver(View view) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);

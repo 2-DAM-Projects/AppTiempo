@@ -7,4 +7,6 @@
     <string name="Tema">Tema Oscuro</string>
     <string name="Temperatura">Mostrar temperatura en Fahrenheit</string>
     <string name="Guardar">Guardar</string>
+    <string name="Usuario">Introduce tu usuario </string>
+    <string name="Contrasena">Introduce tu contraseña</string>
 </resources>

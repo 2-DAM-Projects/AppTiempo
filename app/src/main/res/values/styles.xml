@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Claro" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="colorPrimary">#0685a4</item>
+        <item name="android:windowBackground">#0685a4</item>
     </style>
 
-    <style name="Oscuro" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="colorPrimary">#0429A6</item>
+    <style name="Oscuro" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
+        <item name="android:windowBackground">#0429A6</item>
     </style>
 </resources>

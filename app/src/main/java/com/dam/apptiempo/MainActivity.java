@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         SharedPreferences sharedPreferences = getSharedPreferences("Ajustes", MODE_PRIVATE);
-        provincias = sharedPreferences.getString("provincia", null);
+        provincias = sharedPreferences.getString("provincia", "Sevilla");
 
         // Inicializar variables para poder introducirla en las vistas.
         tvCiudad = findViewById(R.id.tvCiudad);
